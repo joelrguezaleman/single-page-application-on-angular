@@ -1,14 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/main.css">
-        <title>AngularPedia</title>
+        <title>Angular Corporation</title>
     </head>
-    <body ng-app="angularPediaApp">
-        <div>
-            <h2>¡Bienvenido a AngularPedia! Deberías ver un tres: {{ 1 + 2 }}</h2><br>
-        </div>
+    <body ng-app="angularCorp">
+
+        <nav class="" ng-controller="topMenuController">
+        </nav>
+
+        <div ng-view></div>
+
+        <footer class="">
+        </footer>
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>

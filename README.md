@@ -2,7 +2,11 @@
 ===================
 *Scroll further for English :)*
 
-Este proyecto es una demostración de cómo construir una web 100% funcional usando **Angular.js** como tecnología principal (y casi única). En esta web, todo lo que podamos hacer con Angular, lo haremos con Angular.
+Este proyecto es una demostración de cómo construir una web 100% funcional usando **Angular.js** como tecnología principal (y única). En esta web, todo lo que podamos hacer con Angular, lo haremos con Angular.
+
+¿En qué consiste esta web?
+-------------
+Vamos a hacer la landing page de una startup ficticia llamada Angular Corporation. Habrá un menú superior con 4 enlaces: Inicio, Equipo, Portafolio y Contacto, y también un menú inferior con 3 enlaces: Aviso legal, Política de privacidad y Licencias.
 
 Jerarquía de ficheros
 -------------
@@ -22,7 +26,11 @@ No voy a poner ningún tipo de límite al uso que le puedes dar a este proyecto.
 
 Welcome!
 ===================
-This project is a demo of how you can build a 100% functional website using only (or at least almost only) **Angular.js**. On this website, anything we can build with Angular, will be built with Angular. 
+This project is a demo of how you can build a 100% functional website using only (and only) **Angular.js**. On this website, anything we can build with Angular, will be built with Angular. 
+
+What is this web all about?
+-------------
+We're going to build a landing page for a fake startup called Angular Corporation. There will be a top menu with 4 links: Home, Team, Portfolio and Contact, and also a bottom menu with 3 links: Legal warning, Privacy policy and Licenses. 
 
 File hierachy
 -------------
