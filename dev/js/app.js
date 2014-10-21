@@ -17,3 +17,17 @@ angularCorp.controller('topMenuController', ['$scope',
         ];
     }
 ]);
+
+angularCorp.controller('bottomMenuController', ['$scope', 
+    function ($scope)
+    {
+        $scope.bottomMenu = [
+            {'name': 'Aviso legal',
+             'url': '#'},
+            {'name': 'Política de privacidad',
+             'url': '#'},
+            {'name': 'Licencias',
+             'url': '#'}
+        ];
+    }
+]);

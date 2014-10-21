@@ -7,12 +7,22 @@
     </head>
     <body ng-app="angularCorp">
 
-        <nav class="" ng-controller="topMenuController">
+        <nav class="topMenu" ng-controller="topMenuController">
+            <ul>
+                <li ng-repeat="link in topMenu">
+                    <a href="{{ link.url }}">{{ link.name }}</a>
+                </li>
+            </ul>
         </nav>
 
         <div ng-view></div>
 
-        <footer class="">
+        <footer class="bottomMenu" ng-controller="bottomMenuController">
+            <ul>
+                <li ng-repeat="link in bottomMenu">
+                    <a href="{{ link.url }}">{{ link.name }}</a>
+                </li>
+            </ul>
         </footer>
 
     </body>

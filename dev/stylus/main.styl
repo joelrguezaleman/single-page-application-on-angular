@@ -88,3 +88,34 @@ input, select
 /* ---------------------- */
 /* CUSTOM CSS STARTS HERE */
 /* ---------------------- */
+
+.menu
+    position fixed
+    left 0
+    width 100%
+
+    ul
+        text-align center
+        margin 0
+        padding 0
+
+        li
+            display inline-block
+            padding 10px
+            cursor pointer
+
+            a
+                color #222222
+                text-decoration none
+            a:hover
+                text-decoration underline
+
+.topMenu
+    @extends .menu
+    border-bottom 1px solid black
+    top 0
+
+.bottomMenu
+    @extends .menu
+    border-top 1px solid black
+    bottom 0

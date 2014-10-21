@@ -1,8 +1,8 @@
+var scope;
+beforeEach(module('angularCorp'));
+
 describe('topMenuController', function()
 {
-    var scope;
-
-    beforeEach(module('angularCorp'));
     beforeEach(inject(function($controller)
     {
         scope = {};
@@ -27,3 +27,26 @@ describe('topMenuController', function()
     }));
 });
 
+describe('bottomMenuController', function()
+{
+    beforeEach(inject(function($controller)
+    {
+        scope = {};
+        $controller('bottomMenuController', {$scope:scope});
+    }));
+
+    it('should create "bottomMenu" with 3 links', inject(function($controller) 
+    { 
+        expect(scope.bottomMenu.length).toBe(3);
+    }));
+
+    it('should create "bottomMenu" with specific parameters', inject(function($controller) 
+    { 
+        expect(scope.bottomMenu[0].name).toBe('Aviso legal');
+        expect(scope.bottomMenu[0].url).toBe('#');
+        expect(scope.bottomMenu[1].name).toBe('Política de privacidad');
+        expect(scope.bottomMenu[1].url).toBe('#');
+        expect(scope.bottomMenu[2].name).toBe('Licencias');
+        expect(scope.bottomMenu[2].url).toBe('#');
+    }));
+});
