@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     historyApiFallback = require('connect-history-api-fallback'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
+    protractor = require('gulp-protractor').protractor,
     watch = require('gulp-watch'),
     stylus = require('gulp-stylus'),
     nib = require('nib'),
@@ -47,6 +48,17 @@ gulp.task('default', ['browser-sync'], function()
         return gulp.src('./dev/js/*.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'));
+    });
+
+    //  Watch end-to-end tests
+    watch('./test/testBrowser.js', function()
+    {
+        gulp.src(["./src/tests/*.js"])
+        .pipe(protractor({
+            configFile: "./test/conf.js",
+            args: ['--baseUrl', 'http://localhost:3000']
+        })) 
+        .on('error', function(e) { throw e });
     });
 });
 

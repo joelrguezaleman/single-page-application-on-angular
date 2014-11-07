@@ -1,19 +1,59 @@
 'use strict';
 
-var angularCorp = angular.module('angularCorp', []);
+var angularCorp = angular.module('angularCorp', ['ngRoute']);
+
+angularCorp.config(['$routeProvider', '$locationProvider',
+    function($routeProvider, $locationProvider) 
+    {
+        $locationProvider.html5Mode(true);
+
+        $routeProvider.
+        when('/', {
+            templateUrl: 'views/welcome.html'
+        }).
+        when('/404', {
+            templateUrl: 'views/404.html',
+        }).
+        when('/equipo', {
+            templateUrl: 'views/equipo.html',
+        }).
+        when('/portafolio', {
+            templateUrl: 'views/portafolio.html',
+        }).
+        when('/contacto', {
+            templateUrl: 'views/contacto.html',
+        }).
+        when('/aviso-legal', {
+            templateUrl: 'views/aviso-legal.html',
+        }).
+        when('/politica-privacidad', {
+            templateUrl: 'views/politica-privacidad.html',
+        }).
+        when('/licencias', {
+            templateUrl: 'views/licencias.html',
+        }).
+        otherwise({
+            redirectTo: '/404'
+        });
+    }
+]);
 
 angularCorp.controller('topMenuController', ['$scope', 
     function ($scope)
     {
         $scope.topMenu = [
             {'name': 'Inicio',
-             'url': '#'},
+             'url': '/',
+             'id': 'inicio'},
             {'name': 'Equipo',
-             'url': '#'},
+             'url': '/equipo',
+             'id': 'equipo'},
             {'name': 'Portafolio',
-             'url': '#'},
+             'url': '/portafolio',
+             'id': 'portafolio'},
             {'name': 'Contacto',
-             'url': '#'}
+             'url': '/contacto',
+             'id': 'contacto'}
         ];
     }
 ]);
@@ -23,11 +63,14 @@ angularCorp.controller('bottomMenuController', ['$scope',
     {
         $scope.bottomMenu = [
             {'name': 'Aviso legal',
-             'url': '#'},
+             'url': '/aviso-legal',
+             'id': 'legal'},
             {'name': 'Política de privacidad',
-             'url': '#'},
+             'url': '/politica-privacidad',
+             'id': 'politica'},
             {'name': 'Licencias',
-             'url': '#'}
+             'url': '/licencias',
+             'id': 'licencias'}
         ];
     }
 ]);
