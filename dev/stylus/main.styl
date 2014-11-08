@@ -90,9 +90,12 @@ input, select
 /* ---------------------- */
 
 .menu
-    position fixed
+    position absolute
     left 0
-    width 100%
+    top 0
+    width 17%
+    height 100%
+    background-color yellow
 
     ul
         text-align center
@@ -100,7 +103,7 @@ input, select
         padding 0
 
         li
-            display inline-block
+            display block
             padding 10px
             cursor pointer
 
@@ -110,12 +113,9 @@ input, select
             a:hover
                 text-decoration underline
 
-.topMenu
-    @extends .menu
-    border-bottom 1px solid black
-    top 0
-
-.bottomMenu
-    @extends .menu
-    border-top 1px solid black
-    bottom 0
+.content
+    background-color pink
+    position absolute
+    width 83%
+    margin-left 17%
+    height 100%

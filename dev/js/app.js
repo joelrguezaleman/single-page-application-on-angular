@@ -38,10 +38,10 @@ angularCorp.config(['$routeProvider', '$locationProvider',
     }
 ]);
 
-angularCorp.controller('topMenuController', ['$scope', 
+angularCorp.controller('menuController', ['$scope', 
     function ($scope)
     {
-        $scope.topMenu = [
+        $scope.menu = [
             {'name': 'Inicio',
              'url': '/',
              'id': 'inicio'},
@@ -53,21 +53,13 @@ angularCorp.controller('topMenuController', ['$scope',
              'id': 'portafolio'},
             {'name': 'Contacto',
              'url': '/contacto',
-             'id': 'contacto'}
-        ];
-    }
-]);
-
-angularCorp.controller('bottomMenuController', ['$scope', 
-    function ($scope)
-    {
-        $scope.bottomMenu = [
+             'id': 'contacto'},
             {'name': 'Aviso legal',
              'url': '/aviso-legal',
              'id': 'legal'},
             {'name': 'Política de privacidad',
              'url': '/politica-privacidad',
-             'id': 'politica'},
+             'id': 'privacidad'},
             {'name': 'Licencias',
              'url': '/licencias',
              'id': 'licencias'}
