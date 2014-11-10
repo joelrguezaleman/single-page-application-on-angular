@@ -89,13 +89,31 @@ input, select
 /* CUSTOM CSS STARTS HERE */
 /* ---------------------- */
 
+colorGrisOscuro = #333333
+colorGrisIntermedio = #777777
+colorGrisClaro = #F2F2F2
+unidadDeMargen = 20px
+
+html, body
+    height 100%
+    min-height 700px
+    background-color colorGrisClaro
+    font-family 'Source Sans pro', Helvetica, Arial, sans-serif
+
+h1
+    font-size 40px
+    margin-top unidadDeMargen
+    margin-bottom unidadDeMargen
+h2
+    font-size 25px
+
 .menu
-    position absolute
-    left 0
-    top 0
+    float left
     width 17%
     height 100%
-    background-color yellow
+    background-color colorGrisOscuro
+    padding-top unidadDeMargen
+    position fixed
 
     ul
         text-align center
@@ -108,14 +126,102 @@ input, select
             cursor pointer
 
             a
-                color #222222
+                color colorGrisClaro
                 text-decoration none
-            a:hover
-                text-decoration underline
 
-.content
-    background-color pink
-    position absolute
+        li:hover
+            background-color colorGrisClaro
+
+            a
+                color colorGrisOscuro
+        
+.contenido
+    width 85%
+    margin auto
+
+.contenedor
+    float right
+    background-color colorGrisClaro
     width 83%
-    margin-left 17%
     height 100%
+
+    h1,h2
+        text-align center
+    p
+        margin-left 20%
+        margin-right 20%
+        margin-top unidadDeMargen
+        margin-bottom unidadDeMargen
+        line-height 1.5em
+        font-size 20px
+
+    .logo
+        max-width 100% !important
+        height auto
+        display block
+        margin-left auto
+        margin-right auto
+        margin-top unidadDeMargen
+
+    .miembro-del-equipo
+        @extend .contenido
+        background-color colorGrisIntermedio
+        margin-bottom unidadDeMargen
+        padding 10px
+
+        .mitad-imagen
+            width auto
+            display inline-block
+
+            img
+                max-width 100% !important
+                height auto
+                display block
+                margin-left auto
+                margin-right auto
+
+        .mitad-texto
+            width 80%
+            height 100%
+            display inline-block
+            float right
+
+            .texto
+                height 150px
+                display table
+
+                p
+                    display table-cell
+                    vertical-align middle
+                    color colorGrisClaro
+
+            @media screen and (max-width: 1077px)
+                width 75%
+            @media screen and (max-width: 865px)
+                width 65%
+
+    .portafolio
+        @extend .contenido
+        text-align center
+        padding-bottom unidadDeMargen
+
+        img
+            display inline-block
+        img:hover
+            opacity 0.5
+
+@media screen and (max-width: 622px)
+
+    h1
+        font-size 34px
+
+    .menu
+        display none
+    .contenedor
+        width 100%
+    
+        .logo
+            max-width 80% !important
+            margin-left auto
+            margin-right auto
+            margin-top unidadDeMargen

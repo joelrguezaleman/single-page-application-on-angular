@@ -19,6 +19,7 @@ var gulp = require('gulp'),
 gulp.task('browser-sync', function() {
     var files = [
         'dev/*.html',
+        'dev/views/*.html',
         'dev/css/*.css',
         'dev/js/*.js'
     ];
