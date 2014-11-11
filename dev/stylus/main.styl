@@ -112,6 +112,9 @@ h1
 h2
     font-size 25px
 
+.mostrarMenu
+    display none
+
 .menu
     float left
     width 17%
@@ -212,6 +215,7 @@ h2
 
         img
             display inline-block
+            margin-bottom 4px
             opacity 1
             transition(opacity, 0.3s)
         img:hover
@@ -239,8 +243,31 @@ h2
     h1
         font-size 34px
 
+    .mostrarMenu
+        display block
+        width 20px
+        height 20px
+        background-color colorGrisClaro
+        padding 10px
+        position fixed
+        top 5px
+        left 5px
+        z-index 20
+        cursor pointer
+
+        .barra-icono
+            height 1px
+            margin-bottom 4px
+            border-bottom 2px solid colorGrisOscuro
+
     .menu
+        float none
+        width 100%
+        height auto
+        padding-top 0px
         display none
+        z-index 10
+
     .contenedor
         width 100%
     
