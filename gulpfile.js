@@ -39,6 +39,7 @@ gulp.task('default', ['browser-sync'], function()
         gulp.src('./dev/stylus/*.styl')
         .pipe(stylus({ use: nib() }))
         .pipe(minifyCSS())
+        .pipe(concat('main.css'))
         .pipe(gulp.dest('./dev/css'))
         .pipe(reload({stream:true}));
     });

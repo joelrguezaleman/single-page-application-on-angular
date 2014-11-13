@@ -18,6 +18,7 @@ module.exports = function(config) {
       'node_modules/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-route/angular-route.min.js',
+      'node_modules/angular-animate/angular-animate.min.js',
       'dev/js/*.js',
       'test/testApp.js'
     ],

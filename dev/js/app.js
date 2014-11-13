@@ -1,6 +1,6 @@
 'use strict';
 
-var angularCorp = angular.module('angularCorp', ['ngRoute']);
+var angularCorp = angular.module('angularCorp', ['ngRoute', 'ngAnimate']);
 
 angularCorp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) 
@@ -66,3 +66,17 @@ angularCorp.controller('menuController', ['$scope',
         ];
     }
 ]);
+
+angularCorp.controller('menuToggleController', 
+    function ()
+    {
+        $('#mostrarMenu').click(function() {
+            var menu = $('#menu');
+            if (menu.is(':visible')) {
+                $('#menu').slideUp();
+            } else {
+                $('#menu').slideDown();
+            }
+        });
+    }
+);

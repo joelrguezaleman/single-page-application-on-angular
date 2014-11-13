@@ -1,0 +1,53 @@
+.view-container {
+    position: relative;
+}
+
+.view-frame.ng-enter, .view-frame.ng-leave {
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 17%;
+    right: 0;
+}
+
+.view-frame.ng-enter {
+    -webkit-animation: 1s move-in;
+    -moz-animation: 1s move-in;
+    -o-animation: 1s move-in;
+    animation: 1s move-in;
+    z-index: 100;
+}
+
+.view-frame.ng-leave {
+    -webkit-animation: 1s move-out;
+    -moz-animation: 1s move-out;
+    -o-animation: 1s move-out;
+    animation: 1s move-out;
+    z-index:99;
+}
+
+@keyframes move-in {
+    from { top:-1500px; }
+    to { top:0px; }
+}
+@-moz-keyframes move-in {
+    from { top:-1500px; }
+    to { top:0px; }
+}
+@-webkit-keyframes move-in {
+    from { top:-1500px; }
+    to { top:0px; }
+}
+
+@keyframes move-out {
+    from { top:0px; }
+    to { top:1500px; }
+}
+@-moz-keyframes move-out {
+    from { top:0px; }
+    to { top:1500px; }
+}
+@-webkit-keyframes move-out {
+    from { top:0px; }
+    to { top:1500px; }
+}
