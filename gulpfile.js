@@ -1,12 +1,14 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
-    historyApiFallback = require('connect-history-api-fallback'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
     protractor = require('gulp-protractor').protractor,
     watch = require('gulp-watch'),
     stylus = require('gulp-stylus'),
     nib = require('nib'),
+    minifyHTML = require('gulp-minify-html'),
+    optipng = require('imagemin-optipng'),
+    jpegtran = require('imagemin-jpegtran'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
@@ -18,7 +20,7 @@ var gulp = require('gulp'),
 
 gulp.task('browser-sync', function() {
     var files = [
-        'dev/*.html',
+        'dev/index.html',
         'dev/views/*.html',
         'dev/css/*.css',
         'dev/js/*.js'
@@ -68,28 +70,45 @@ gulp.task('default', ['browser-sync'], function()
 //  Production
 //  ----------------------------------------------
 
-//  CSS is already minified, so just concat and copy
+//  CSS is already minified, so just copy
 gulp.task('copy-css', function()
 {
     gulp.src('./dev/css/*.css')
-    .pipe(concat('main.css'))
     .pipe(gulp.dest('./prod/css'));
 });
 
-//  Copy HTML to production
-gulp.task('copy-html', function()
+//  Build compressed HTML
+gulp.task('build-html', function()
 {
-    gulp.src('./dev/*.html')
-    .pipe(gulp.dest('./prod'));
+    gulp.src('./dev/index.html')
+        .pipe(minifyHTML( {empty:true} ))
+        .pipe(gulp.dest('./prod'));
+
+    gulp.src('./dev/views/*.html')
+        .pipe(minifyHTML( {empty:true} ))
+        .pipe(gulp.dest('./prod/views'));
 });
 
-//  Build js
+//  Build compressed images
+gulp.task('build-png', function () {
+    gulp.src('./dev/img/*.png')
+        .pipe(optipng({ optimizationLevel: 3 })())
+        .pipe(gulp.dest('./prod/img'));
+});
+gulp.task('build-jpg', function () {
+    gulp.src('./dev/img/*.jpg')
+        .pipe(jpegtran({ progressive: true })())
+        .pipe(gulp.dest('./prod/img'));
+});
+gulp.task('build-images', ['build-png', 'build-jpg']);
+
+//  Build compressed js
 gulp.task('build-js', function()
 {
-    return gulp.src('./dev/js/*.js')
-           .pipe(uglify())
-           .pipe(concat('app.js'))
-           .pipe(gulp.dest('./prod/js'));
+    gulp.src('./dev/js/*.js')
+       .pipe(uglify())
+       .pipe(concat('app.js'))
+       .pipe(gulp.dest('./prod/js'));
 });
 
 //  Start production server
@@ -98,12 +117,9 @@ gulp.task('start-prod-server', function()
     connect.server({
         root: './prod',
         hostname: '0.0.0.0',
-        port: 8080,
-        middleware: function(connect, opt) {
-            return [ historyApiFallback ];
-        }
+        port: 8080
     });
 });
 
 //  Build to production
-gulp.task('build', ['copy-css', 'copy-html', 'build-js', 'start-prod-server']);
+gulp.task('build', ['copy-css', 'build-html', 'build-images', 'build-js', 'start-prod-server']);
