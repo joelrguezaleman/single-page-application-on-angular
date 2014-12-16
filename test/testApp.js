@@ -1,8 +1,8 @@
-var scope;
-beforeEach(module('angularCorp'));
-
 describe('menuController', function()
 {
+    var scope;
+    beforeEach(module('angularCorp'));
+
     beforeEach(inject(function($controller)
     {
         scope = {};
