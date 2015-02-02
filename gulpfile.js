@@ -77,6 +77,13 @@ gulp.task('copy-css', function()
     .pipe(gulp.dest('./prod/css'));
 });
 
+//  Copy JSON files
+gulp.task('copy-json', function()
+{
+    gulp.src('./dev/data/*.json')
+    .pipe(gulp.dest('./prod/data'));
+});
+
 //  Build compressed HTML
 gulp.task('build-html', function()
 {
@@ -122,4 +129,4 @@ gulp.task('start-prod-server', function()
 });
 
 //  Build to production
-gulp.task('build', ['copy-css', 'build-html', 'build-images', 'build-js', 'start-prod-server']);
+gulp.task('build', ['copy-css', 'copy-json', 'build-html', 'build-images', 'build-js', 'start-prod-server']);
