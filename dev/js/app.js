@@ -14,23 +14,23 @@ angularCorp.config(['$routeProvider', '$locationProvider',
         when('/404', {
             templateUrl: 'views/404.html',
         }).
-        when('/equipo', {
-            templateUrl: 'views/equipo.html',
+        when('/team', {
+            templateUrl: 'views/team.html',
         }).
-        when('/portafolio', {
-            templateUrl: 'views/portafolio.html',
+        when('/portfolio', {
+            templateUrl: 'views/portfolio.html',
         }).
-        when('/contacto', {
-            templateUrl: 'views/contacto.html',
+        when('/contact', {
+            templateUrl: 'views/contact.html',
         }).
-        when('/aviso-legal', {
-            templateUrl: 'views/aviso-legal.html',
+        when('/legal-note', {
+            templateUrl: 'views/legal-note.html',
         }).
-        when('/politica-privacidad', {
-            templateUrl: 'views/politica-privacidad.html',
+        when('/privacy-policy', {
+            templateUrl: 'views/privacy-policy.html',
         }).
-        when('/licencias', {
-            templateUrl: 'views/licencias.html',
+        when('/licenses', {
+            templateUrl: 'views/licenses.html',
         }).
         otherwise({
             redirectTo: '/404'
@@ -42,27 +42,27 @@ angularCorp.controller('menuController', ['$scope',
     function ($scope)
     {
         $scope.menu = [
-            {'name': 'Inicio',
+            {'name': 'Home',
              'url': '/',
-             'id': 'inicio'},
-            {'name': 'Equipo',
-             'url': '/equipo',
-             'id': 'equipo'},
-            {'name': 'Portafolio',
-             'url': '/portafolio',
-             'id': 'portafolio'},
-            {'name': 'Contacto',
-             'url': '/contacto',
-             'id': 'contacto'},
-            {'name': 'Aviso legal',
-             'url': '/aviso-legal',
-             'id': 'legal'},
-            {'name': 'Política de privacidad',
-             'url': '/politica-privacidad',
-             'id': 'privacidad'},
-            {'name': 'Licencias',
-             'url': '/licencias',
-             'id': 'licencias'}
+             'id': 'home'},
+            {'name': 'Team',
+             'url': '/team',
+             'id': 'team'},
+            {'name': 'Portfolio',
+             'url': '/portfolio',
+             'id': 'portfolio'},
+            {'name': 'Contact',
+             'url': '/contact',
+             'id': 'contact'},
+            {'name': 'Legal note',
+             'url': '/legal-note',
+             'id': 'legal-note'},
+            {'name': 'Privacy policy',
+             'url': '/privacy-policy',
+             'id': 'privacy-policy'},
+            {'name': 'Licenses',
+             'url': '/licenses',
+             'id': 'licenses'}
         ];
     }
 ]);
@@ -70,7 +70,7 @@ angularCorp.controller('menuController', ['$scope',
 angularCorp.controller('menuToggleController', 
     function ()
     {
-        $('#mostrarMenu').click(function() {
+        $('#showMenu').click(function() {
             var menu = $('#menu');
             if (menu.is(':visible')) {
                 $('#menu').slideUp();

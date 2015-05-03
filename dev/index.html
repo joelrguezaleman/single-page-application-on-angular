@@ -8,10 +8,10 @@
     </head>
     <body ng-app="angularCorp">
 
-        <div class="mostrarMenu" id="mostrarMenu" ng-controller="menuToggleController">
-            <div class="barra-icono"></div>
-            <div class="barra-icono"></div>
-            <div class="barra-icono"></div>
+        <div class="showMenu" id="showMenu" ng-controller="menuToggleController">
+            <div class="icon-bar"></div>
+            <div class="icon-bar"></div>
+            <div class="icon-bar"></div>
         </div>
 
         <nav class="menu" ng-controller="menuController" id="menu">
@@ -23,7 +23,7 @@
         </nav>
 
         <div class="view-container">
-            <div ng-view class="contenedor view-frame"></div>
+            <div ng-view class="container view-frame"></div>
         </div>
 
     </body>

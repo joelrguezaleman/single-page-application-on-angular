@@ -4,57 +4,57 @@ describe('angularCorp browser tests', function()
         browser.get('http://localhost:3000');
     });
 
-    it('should go to equipo page', function() 
+    it('goes to team page', function() 
     {
-        element(by.id('equipo')).click();
+        element(by.id('team')).click();
         
         browser.getLocationAbsUrl().then(function(url) {
-            expect(url.split('/')[3]).toBe('equipo');
+            expect(url.split('/')[3]).toBe('team');
         });
     });
 
-    it('should go to portafolio page', function() 
+    it('goes to portfolio page', function() 
     {
-        element(by.id('portafolio')).click();
+        element(by.id('portfolio')).click();
         
         browser.getLocationAbsUrl().then(function(url) {
-            expect(url.split('/')[3]).toBe('portafolio');
+            expect(url.split('/')[3]).toBe('portfolio');
         });
     });
 
-    it('should go to contacto page', function() 
+    it('goes to contact page', function() 
     {
-        element(by.id('contacto')).click();
+        element(by.id('contact')).click();
         
         browser.getLocationAbsUrl().then(function(url) {
-            expect(url.split('/')[3]).toBe('contacto');
+            expect(url.split('/')[3]).toBe('contact');
         });
     });
 
-    it('should go to aviso legal page', function() 
+    it('goes to legal note page', function() 
     {
-        element(by.id('legal')).click();
+        element(by.id('legal-note')).click();
         
         browser.getLocationAbsUrl().then(function(url) {
-            expect(url.split('/')[3]).toBe('aviso-legal');
+            expect(url.split('/')[3]).toBe('legal-note');
         });
     });
 
-    it('should go to politica privacidad page', function() 
+    it('goes to privacy policy page', function() 
     {
-        element(by.id('politica')).click();
+        element(by.id('privacy-policy')).click();
         
         browser.getLocationAbsUrl().then(function(url) {
-            expect(url.split('/')[3]).toBe('politica-privacidad');
+            expect(url.split('/')[3]).toBe('privacy-policy');
         });
     });
 
-    it('should go to licencias page', function() 
+    it('goes to licenses page', function() 
     {
-        element(by.id('licencias')).click();
+        element(by.id('licenses')).click();
         
         browser.getLocationAbsUrl().then(function(url) {
-            expect(url.split('/')[3]).toBe('licencias');
+            expect(url.split('/')[3]).toBe('licenses');
         });
     });
 });

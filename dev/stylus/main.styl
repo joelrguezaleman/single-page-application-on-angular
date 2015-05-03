@@ -89,10 +89,10 @@ input, select
 /* CUSTOM CSS STARTS HERE */
 /* ---------------------- */
 
-colorGrisOscuro = #333333
-colorGrisIntermedio = #777777
-colorGrisClaro = #F2F2F2
-unidadDeMargen = 20px
+darkGray = #333333
+mediumGray = #777777
+lightGray = #F2F2F2
+baseUnit = 20px
 
 transition(type, seconds)
     -webkit-transition type seconds ease-out
@@ -102,25 +102,25 @@ transition(type, seconds)
 
 html, body
     height 100%
-    background-color colorGrisClaro
+    background-color lightGray
     font-family 'Source Sans pro', Helvetica, Arial, sans-serif
 
 h1
     font-size 40px
-    margin-top unidadDeMargen
-    margin-bottom unidadDeMargen
+    margin-top baseUnit
+    margin-bottom baseUnit
 h2
     font-size 25px
 
-.mostrarMenu
+.showMenu
     display none
 
 .menu
     float left
     width 17%
     height 100%
-    background-color colorGrisOscuro
-    padding-top unidadDeMargen
+    background-color darkGray
+    padding-top baseUnit
     position fixed
 
     ul
@@ -134,22 +134,22 @@ h2
             cursor pointer
 
             a
-                color colorGrisClaro
+                color lightGray
                 text-decoration none
 
         li:hover
-            background-color colorGrisClaro
+            background-color lightGray
 
             a
-                color colorGrisOscuro
+                color darkGray
         
-.contenido
+.content
     width 85%
     margin auto
 
-.contenedor
+.container
     float right
-    background-color colorGrisClaro
+    background-color lightGray
     width 83%
     height 100%
 
@@ -158,8 +158,8 @@ h2
     p
         margin-left 20%
         margin-right 20%
-        margin-top unidadDeMargen
-        margin-bottom unidadDeMargen
+        margin-top baseUnit
+        margin-bottom baseUnit
         line-height 1.5em
         font-size 20px
 
@@ -169,15 +169,15 @@ h2
         display block
         margin-left auto
         margin-right auto
-        margin-top unidadDeMargen
+        margin-top baseUnit
 
-    .miembro-del-equipo
-        @extend .contenido
-        background-color colorGrisIntermedio
-        margin-bottom unidadDeMargen
+    .team-member
+        @extend .content
+        background-color mediumGray
+        margin-bottom baseUnit
         padding 10px
 
-        .mitad-imagen
+        .image
             width auto
             display inline-block
 
@@ -188,30 +188,30 @@ h2
                 margin-left auto
                 margin-right auto
 
-        .mitad-texto
+        .text
             width 80%
             height 100%
             display inline-block
             float right
 
-            .texto
+            .text-container
                 height 150px
                 display table
 
                 p
                     display table-cell
                     vertical-align middle
-                    color colorGrisClaro
+                    color lightGray
 
             @media screen and (max-width: 1077px)
                 width 75%
             @media screen and (max-width: 865px)
                 width 65%
 
-    .portafolio
-        @extend .contenido
+    .portfolio
+        @extend .content
         text-align center
-        padding-bottom unidadDeMargen
+        padding-bottom baseUnit
 
         img
             display inline-block
@@ -243,11 +243,11 @@ h2
     h1
         font-size 34px
 
-    .mostrarMenu
+    .showMenu
         display block
         width 20px
         height 20px
-        background-color colorGrisClaro
+        background-color lightGray
         padding 10px
         position fixed
         top 5px
@@ -255,10 +255,10 @@ h2
         z-index 20
         cursor pointer
 
-        .barra-icono
+        .icon-bar
             height 1px
             margin-bottom 4px
-            border-bottom 2px solid colorGrisOscuro
+            border-bottom 2px solid darkGray
 
     .menu
         float none
@@ -268,37 +268,37 @@ h2
         display none
         z-index 10
 
-    .contenedor
+    .container
         width 100%
     
         .logo
             max-width 80% !important
             margin-left auto
             margin-right auto
-            margin-top unidadDeMargen
+            margin-top baseUnit
 
-        .portafolio
+        .portfolio
             img
                 max-width 100% !important
                 height auto
 
 @media screen and (max-width: 519px)
-    .contenedor
-        .miembro-del-equipo
+    .container
+        .team-member
             height auto
             display block
 
-            .mitad-imagen
+            .image
                 display block
-            .mitad-texto
+            .text
                 width 100%
                 display block
                 float none
 
 @media screen and (max-width: 519px)
-    .contenedor
-        .miembro-del-equipo
+    .container
+        .team-member
 
-            .mitad-imagen
+            .image
                 img
                     margin-bottom 10px
